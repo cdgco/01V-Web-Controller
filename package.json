@@ -2,24 +2,17 @@
     "name": "01v-web-controller",
     "version": "1.0.0",
     "description": "Remote Web Midi Controller for Yamaha 01V",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/cdgco/01V-Web-Controller.git"
+    },
     "main": "main.js",
     "scripts": {
-        "postinstall": "electron-builder install-app-deps",
-        "start": "electron .",
-        "pack": "electron-builder --dir",
-        "dist": "electron-builder"
-    },
-    "build": {
-        "appId": "01v-web-controller",
-        "win": {
-            "target": "NSIS",
-            "icon": "assets/homescreen512.png"
-        }
+        "start": "npm install && electron ."
     },
     "author": "Carter Roeser <carter@cdgtech.one>",
     "license": "MIT",
     "dependencies": {
-        "electron-packager": "^15.0.0",
         "express": "^4.17.1",
         "ip": "^1.1.5",
         "jquery": "^3.5.1",
@@ -28,7 +21,6 @@
         "web-midi-api": "^2.0.8"
     },
     "devDependencies": {
-        "electron": "^9.0.5",
-        "electron-winstaller": "^4.0.0"
+        "electron": "^9.0.5"
     }
 }

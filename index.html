@@ -1,0 +1,534 @@
+<html>
+
+<head>
+    <title>01V Web Controller</title>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="./assets/manifest.json">
+
+    <script>
+        var $ = jQuery = require("jquery")
+    </script>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <div id="orientation">
+        <h1>Please use landscape orientation.</h1>
+    </div>
+    <button class="tablink" onclick="openPage('bank1', this, '#333')" id="defaultOpen">
+    Channels 1 - 8
+  </button>
+    <button class="tablink" onclick="openPage('bank2', this, '#333')">
+    Channels 9 - 16
+  </button>
+    <button class="tablink" onclick="openPage('bank3', this, '#333')">
+    Channels 17 - 24
+  </button>
+    <button class="tablink" onclick="openPage('bank4', this, '#333')">
+    Output Busses
+  </button>
+    <button class="tablink" onclick="openPage('pan', this, '#333')">
+    Pan
+  </button>
+    <button class="tablink" style="width:5%" onclick="if(document.fullscreen) {document.exitFullscreen();} else {document.body.requestFullscreen();}">
+    <i class="fa fa-arrows-alt"></i>&nbsp;
+  </button>
+    <button class="tablink" style="width:5%;" onclick="location.reload();">
+    <i class="fa fa-refresh"></i>&nbsp;
+  </button>
+    <div style="background-color: #555;width:100%;height: 44.5px;"></div>
+
+    <div id="bank1" class="tabcontent container-fluid" style="overflow: hidden; overflow-y: hidden;">
+        <div class="row" style="position: relative; top: 20%;">
+            <div class="col-sm">
+                <input id="1" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 1, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="2" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 2, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="3" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 3, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="4" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 4, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="5" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 5, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="6" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 6, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="7" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 7, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="8" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 8, this.value);" value="0" step="1" />
+            </div>
+            <div class="w-100"></div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="64" onclick="toggleMute('64')">
+          Ch 1
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="65" onclick="toggleMute('65')">
+          Ch 2
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="66" onclick="toggleMute('66')">
+          Ch 3
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="67" onclick="toggleMute('67')">
+          Ch 4
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="68" onclick="toggleMute('68')">
+          Ch 5
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="69" onclick="toggleMute('69')">
+          Ch 6
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="70" onclick="toggleMute('70')">
+          Ch 7
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="71" onclick="toggleMute('71')">
+          Ch 8
+        </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bank2" class="tabcontent container-fluid" style="overflow: hidden; overflow-y: hidden;">
+        <div class="row" style="position: relative; top: 20%;">
+            <div class="col-sm">
+                <input id="9" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 9, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="10" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 10, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="11" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 11, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="12" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 12, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="25" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 25, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="13" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 13, this.value);" value="0" step="1" />
+            </div>
+            <div class="w-100"></div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="72" onclick="toggleMute('72')">
+          Ch 9
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="73" onclick="toggleMute('73')">
+          Ch 10
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="74" onclick="toggleMute('74')">
+          Ch 11
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="75" onclick="toggleMute('75')">
+          Ch 12
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="88" onclick="toggleMute('88')">
+          Ch 13/14
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="14" onclick="toggleMute('14')">
+          Ch 15/16
+        </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bank3" class="tabcontent container-fluid" style="overflow: hidden; overflow-y: hidden;">
+        <div class="row" style="position: relative; top: 20%;">
+            <div class="col-sm">
+                <input id="17" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 17, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="18" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 18, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="19" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 19, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="20" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 20, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="21" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 21, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="22" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 22, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="23" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 23, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="24" type="range" class="slider" min="0" max="127" oninput="socket.emit('fader change', 24, this.value);" value="0" step="1" />
+            </div>
+            <div class="w-100"></div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="80" onclick="toggleMute('80')">
+          Ch 17
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="81" onclick="toggleMute('81')">
+          Ch 18
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="82" onclick="toggleMute('82')">
+          Ch 19
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="83" onclick="toggleMute('83')">
+          Ch 20
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="84" onclick="toggleMute('84')">
+          Ch 21
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="85" onclick="toggleMute('85')">
+          Ch 22
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="86" onclick="toggleMute('86')">
+          Ch 23
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="87" onclick="toggleMute('87')">
+          Ch 24
+        </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bank4" class="tabcontent container-fluid" style="overflow: hidden; overflow-y: hidden;">
+        <div class="row" style="position: relative; top: 20%;">
+            <div class="col-sm">
+                <input id="28" type="range" class="slider aux" min="0" max="127" oninput="socket.emit('fader change', 28, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="29" type="range" class="slider aux" min="0" max="127" oninput="socket.emit('fader change', 29, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="30" type="range" class="slider aux" min="0" max="127" oninput="socket.emit('fader change', 30, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="31" type="range" class="slider aux" min="0" max="127" oninput="socket.emit('fader change', 31, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="33" type="range" class="slider bus" min="0" max="127" oninput="socket.emit('fader change', 33, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="34" type="range" class="slider bus" min="0" max="127" oninput="socket.emit('fader change', 34, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="35" type="range" class="slider bus" min="0" max="127" oninput="socket.emit('fader change', 35, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="36" type="range" class="slider bus" min="0" max="127" oninput="socket.emit('fader change', 36, this.value);" value="0" step="1" />
+            </div>
+            <div class="col-sm">
+                <input id="37" type="range" class="slider main" min="0" max="127" oninput="socket.emit('fader change', 37, this.value);" value="0" step="1" />
+            </div>
+            <div class="w-100"></div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="91" onclick="toggleMute('91')">
+          Aux 1
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="92" onclick="toggleMute('92')">
+          Aux 2
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="93" onclick="toggleMute('93')">
+          Aux 3
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="94" onclick="toggleMute('94')">
+          Aux 4
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="50" onclick="toggleMute('50')">
+          Bus 1
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="51" onclick="toggleMute('51')">
+          Bus 2
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="52" onclick="toggleMute('52')">
+          Bus 3
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="53" onclick="toggleMute('53')">
+          Bus 4
+        </button>
+            </div>
+            <div class="col-sm" style="text-align: center;height: min-content;    top: -7%;">
+                <button type="button" class="btn btn-success" id="95" onclick="toggleMute('95')">
+          ST
+        </button>
+            </div>
+        </div>
+    </div>
+    <div id="pan" class="tabcontent container-fluid" style="overflow: hidden; overflow-y: hidden;">
+        <div class="row" style="position: relative; top: 8%;">
+            <div class="col-1">
+                <webaudio-knob id="38" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="39" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="40" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="41" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="42" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="43" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="44" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="45" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="46" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="47" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="48" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1">
+                <webaudio-knob id="49" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('38').setValue(64, true);">
+                <p>Ch 1</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('39').setValue(64, true);">
+                <p>Ch 2</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('40').setValue(64, true);">
+                <p>Ch 3</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('41').setValue(64, true);">
+                <p>Ch 4</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('42').setValue(64, true);">
+                <p>Ch 5</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('43').setValue(64, true);">
+                <p>Ch 6</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('44').setValue(64, true);">
+                <p>Ch 7</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('45').setValue(64, true);">
+                <p>Ch 8</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('46').setValue(64, true);">
+                <p>Ch 9</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('47').setValue(64, true);">
+                <p>Ch 10</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('48').setValue(64, true);">
+                <p>Ch 11</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -7%;" onclick="document.getElementById('49').setValue(64, true);">
+                <p>Ch 12</p>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="62" class="panpot" value="0" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="63" class="panpot" value="127" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="15" class="panpot" value="0" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="16" class="panpot" value="127" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="54" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="55" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="56" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="57" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="58" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="59" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="60" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="col-1" style="top: -5%;">
+                <webaudio-knob id="61" class="panpot" value="64" min="0" max="127" step="3"></webaudio-knob>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('62').setValue(0, true);">
+                <p>Ch 13</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('63').setValue(127, true);">
+                <p>Ch 14</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('15').setValue(0, true);">
+                <p>Ch 15</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('16').setValue(127, true);">
+                <p>Ch 16</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('54').setValue(64, true);">
+                <p>Ch 17</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('55').setValue(64, true);">
+                <p>Ch 18</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('56').setValue(64, true);">
+                <p>Ch 19</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('57').setValue(64, true);">
+                <p>Ch 20</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('58').setValue(64, true);">
+                <p>Ch 21</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('59').setValue(64, true);">
+                <p>Ch 22</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('60').setValue(64, true);">
+                <p>Ch 23</p>
+            </div>
+            <div class="col-1" style="text-align: center;height: min-content; top: -12%;" onclick="document.getElementById('61').setValue(64, true);">
+                <p>Ch 24</p>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/webaudio-controls.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "flex";
+            elmnt.style.backgroundColor = color;
+        }
+
+        document.getElementById("defaultOpen").click();
+
+        var socket = io();
+
+        socket.on("fader change", function(note, value) {
+            if (note >= 1 && note <= 13 || note >= 17 && note <= 37) {
+                document.getElementById(note).value = value;
+            } else if (note >= 15 && note <= 16 || note >= 38 && note <= 49 || note >= 54 && note <= 63) {
+                document.getElementById(note).setValue(value, false);
+            } else {
+                if (value == 0) {
+                    $('#' + note).removeClass().addClass('btn btn-danger');
+                } else {
+                    $('#' + note).removeClass().addClass('btn btn-success');
+                }
+            }
+        });
+
+        function toggleMute(id) {
+            if ($('#' + id).hasClass('btn-success')) {
+                $('#' + id).removeClass().addClass('btn btn-danger');
+                socket.emit('fader change', id, 0);
+            } else {
+                $('#' + id).removeClass().addClass('btn btn-success');
+                socket.emit('fader change', id, 127);
+            }
+        }
+        if (window.innerHeight > window.innerWidth) {
+            document.getElementById("orientation").style = "display:flex;";
+        } else {
+            document.getElementById("orientation").style = "display:none;";
+        }
+        window.onresize = function() {
+            if (window.innerHeight > window.innerWidth) {
+                document.getElementById("orientation").style = "display:flex;";
+            } else {
+                document.getElementById("orientation").style = "display:none;";
+            }
+        }
+
+        const panpots = document.querySelectorAll(".panpot");
+        for (const panpot of panpots) {
+            panpot.addEventListener('input', function(event) {
+                socket.emit('fader change', panpot.id, panpot.value);
+            })
+        }
+    </script>
+</body>
+
+</html>

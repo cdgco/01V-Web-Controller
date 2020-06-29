@@ -1,0 +1,29 @@
+{
+    
+    "name": "01V Web Controller",
+    "start_url": "../.",
+    "display": "fullscreen",
+    "orientation":  "landscape",
+    "background_color": "#333",
+    "theme_color": "#60b0f4",
+    "description": "Remote Web Midi Controller for Yamaha 01V",
+    "icons": [{
+        "src": "homescreen192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "homescreen512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }],
+      "shortcuts": [
+        {
+          "name": "01V Web Controller",
+          "short_name": "01V Control",
+          "description": "Remote Web Midi Controller for Yamaha 01V",
+          "url": "../.",
+          "icons": [{ "src": "homescreen192.png", "sizes": "192x192" }]
+        }
+      ]
+  }

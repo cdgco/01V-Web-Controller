@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>01V Web Controller</title>
+
+    <script>
+        var $ = jQuery = require("jquery")
+    </script>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div id="container" class="container-fluid">
+        <br><br>
+        <div style="text-align: center;justify-content: center; align-items: center;display: flex;" id="setup-forms">
+            <div id="setup-choose" style="display: flex;text-align: center;">
+
+                <form id="ipcForm" action="info.html">
+                    <div class="form-group">
+                        <label>Input Device</label>
+                        <select class="form-control" name="input" id="setup-inputs">
+                        <option disable>Select Input Device</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Output Device</label>
+                        <select class="form-control" name="output" id="setup-outputs">
+                        <option disable>Select Input Device</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Web Port</label>
+                        <input class="form-control" type="number" name="port" value="3000" id="port" />
+                    </div><br>
+                    <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./window.js" charset="utf-8"></script>
+</body>
+
+</html>

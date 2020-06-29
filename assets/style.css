@@ -1,0 +1,236 @@
+html {
+  background: #333;
+  font-family: serif;
+  font: menu;
+  color: white;
+}
+
+body {
+  background-color: #333 !important;
+  touch-action: none;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.col-1 {
+  justify-content: center;
+  display: flex;
+}
+.container {
+  background: #333;
+}
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 14px;
+  width: 15%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+.tabcontent {
+  color: white;
+  display: none;
+  height: 100%;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) { 
+  html { 
+    transform: rotate(-90deg); 
+    transform-origin: left top;
+    width: 100vh; 
+    overflow-x: hidden; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+  }
+}
+#orientation {
+  height: 100%;
+  width: 100%;
+  background-color: #60b0f4;
+  color:black;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button:focus {
+  outline: none !important;
+  border: none !important;
+}
+button:active {
+  outline: none !important;
+  border: none !important;
+}
+.main::-webkit-slider-thumb {
+  background: linear-gradient(90deg, #f86a69, #ab0101 25%, #ab0101 65%, #f05551 75%, #dc2828 92%, #fb9997 98%) content-box, linear-gradient(90deg, #ea5a5a, #ab0101, #ab0101, #e9292f) padding-box, linear-gradient(90deg, #e13d3c, #ab0101, #ab0101, #e82a2a) border-box !important;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.bus::-webkit-slider-thumb {
+  background: linear-gradient(90deg, #d1d1d1, #5a5a5a 25%, #5a5a5a 65%, #d1d1d1 75%, #757575 92%, #d1d1d1 98%) content-box, linear-gradient(90deg, #d1d1d1, #5a5a5a, #5a5a5a, #757575) padding-box, linear-gradient(90deg, #d1d1d1, #5a5a5a, #5a5a5a, #757575) border-box !important;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.aux::-webkit-slider-thumb {
+  background: linear-gradient(90deg, #78cdff, #0078da 25%, #0078da 65%, #1b9bd6 75%, #1b9bd6 92%, #78cdff 98%) content-box, linear-gradient(90deg, #1b9bd6, #0078da, #0078da, #1b9bd6) padding-box, linear-gradient(90deg, #1b9bd6, #0078da, #0078da, #1b9bd6) border-box !important;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.slider {
+  position: relative;
+  top: 45%;
+  left: 50%;
+  padding: 0;
+  width: 65vh;
+  height: 5vw;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  background: repeating-linear-gradient(-90deg, #a7a7a7, #d8d8d8 0.125em, transparent 0.125em, transparent 7em) 50% 50%, repeating-linear-gradient(-90deg, #a7a7a7, #d8d8d8 0.125em, transparent 0.125em, transparent 1.75em) 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 28.125em 8em, 28.125em 4em;
+  font-size: 80%;
+  cursor: pointer;
+}
+.slider, .slider::-webkit-slider-runnable-track, .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.slider::-webkit-slider-runnable-track {
+  width: 30em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  background: #000;
+}
+.slider::-moz-range-track {
+  width: 30em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  background: #000;
+}
+.slider::-ms-track {
+  border: none;
+  width: 30em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  background: #000;
+  color: transparent;
+}
+.slider::-webkit-slider-thumb {
+  position: relative;
+  margin-top: -2.5em;
+  box-sizing: border-box;
+  border: solid .125em transparent;
+  border-bottom-width: .375em;
+  padding: .125em;
+  padding-bottom: 0;
+  border-right-width: 0;
+  width: 8em;
+  height: 5.5em;
+  border-radius: 0;
+  cursor: ns-resize;
+  background: linear-gradient(90deg, #7d7d7d, #000000 25%, #000000 65%, #6d6d6d 75%, #202020 92%, #adadad 98%) content-box, linear-gradient(90deg, #606060, #000000, #000000, #808080) padding-box, linear-gradient(90deg, #6b6b6b, #000000, #000000, #939393) border-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.slider::-moz-range-thumb {
+  box-sizing: border-box;
+  border: solid .125em transparent;
+  border-bottom-width: .375em;
+  padding: .125em;
+  padding-bottom: 0;
+  border-right-width: 0;
+  width: 8em;
+  height: 5.5em;
+  border-radius: 0;
+  cursor: ns-resize;
+  background: linear-gradient(#f1f1f1, #b5b5b5) 50% calc(100% - .5em) border-box, linear-gradient(#272727, #7b7b7b) 50% calc(100% - .125em) border-box, linear-gradient(135deg, #404040, #272727, #7b7b7b, #cfd0d2) 50% calc(100% - 1px) border-box, linear-gradient(135deg, #404040, #272727, #7b7b7b, #898989) 50% 100% border-box, linear-gradient(90deg, #7d7d7d, #000000 25%, #000000 65%, #6d6d6d 75%, #202020 92%, #adadad 98%) content-box, linear-gradient(90deg, #606060, #000000, #000000, #808080) padding-box, linear-gradient(90deg, #6b6b6b, #000000, #000000, #939393) border-box;
+  background-repeat: no-repeat;
+  background-size: 0.375em 4em, 2.95em 4.75em, 3.075em 4.875em, 3.2em 5em, 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.slider::-ms-thumb {
+  box-sizing: border-box;
+  border: solid .125em transparent;
+  border-bottom-width: .375em;
+  padding: .125em;
+  padding-bottom: 0;
+  border-right-width: 0;
+  width: 8em;
+  height: 5.5em;
+  border-radius: 0;
+  cursor: ns-resize;
+  background: linear-gradient(#f1f1f1, #b5b5b5) 50% calc(100% - .5em) border-box, linear-gradient(#272727, #7b7b7b) 50% calc(100% - .125em) border-box, linear-gradient(135deg, #404040, #272727, #7b7b7b, #cfd0d2) 50% calc(100% - 1px) border-box, linear-gradient(135deg, #404040, #272727, #7b7b7b, #898989) 50% 100% border-box, linear-gradient(90deg, #7d7d7d, #000000 25%, #000000 65%, #6d6d6d 75%, #202020 92%, #adadad 98%) content-box, linear-gradient(90deg, #606060, #000000, #000000, #808080) padding-box, linear-gradient(90deg, #6b6b6b, #000000, #000000, #939393) border-box;
+  background-repeat: no-repeat;
+  background-size: 0.375em 4em, 2.95em 4.75em, 3.075em 4.875em, 3.2em 5em, 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.slider::-ms-fill-lower, .slider::-ms-tooltip {
+  display: none;
+}
+.slider::-webkit-slider-thumb:before, .slider::-webkit-slider-thumb:after, .slider /deep/ #thumb:before, .slider /deep/ #thumb:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: .375em;
+  transform: translate(-50%, -50%);
+  content: '';
+}
+.slider::-webkit-slider-thumb:before, .slider /deep/ #thumb:before {
+  box-sizing: border-box;
+  border: solid 1px transparent;
+  padding: 1px;
+  width: 3.2em;
+  height: 5em;
+  border-radius: .25em;
+  box-shadow: 0 0 .125em #808080;
+  background: linear-gradient(#272727, #7b7b7b) 50% calc(100% - .125em) border-box, linear-gradient(135deg, #404040, #272727, #7b7b7b, #cfd0d2) 50% calc(100% - 1px) border-box, linear-gradient(135deg, #404040, #272727, #7b7b7b, #898989) 50% 100% border-box;
+  background-clip: content-box, padding-box, border-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.slider::-webkit-slider-thumb:after, .slider /deep/ #thumb:after {
+  width: 0.375em;
+  height: 4em;
+  border-radius: 2em;
+  background: linear-gradient(#f1f1f1, #b5b5b5);
+}
+.slider:focus {
+  outline: none;
+}
+.slider:focus::-webkit-slider-thumb {
+  background: linear-gradient(90deg, #f86a69, #ab0101 25%, #ab0101 65%, #f05551 75%, #dc2828 92%, #fb9997 98%) content-box, linear-gradient(90deg, #ea5a5a, #ab0101, #ab0101, #e9292f) padding-box, linear-gradient(90deg, #e13d3c, #ab0101, #ab0101, #e82a2a) border-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.slider:focus::-moz-range-thumb {
+  background: linear-gradient(#f1f1f1, #b5b5b5) 50% calc(100% - .5em) border-box, linear-gradient(#fa3030, #f30100) 50% calc(100% - .125em) border-box, linear-gradient(135deg, #e70809, #fa3030, #f30100, #fc8986) 50% calc(100% - 1px) border-box, linear-gradient(135deg, #e70809, #fa3030, #f30100, #fe6566) 50% 100% border-box, linear-gradient(90deg, #f86a69, #ab0101 25%, #ab0101 65%, #f05551 75%, #dc2828 92%, #fb9997 98%) content-box, linear-gradient(90deg, #ea5a5a, #ab0101, #ab0101, #e9292f) padding-box, linear-gradient(90deg, #e13d3c, #ab0101, #ab0101, #e82a2a) border-box;
+  background-repeat: no-repeat;
+  background-size: 0.375em 4em, 2.95em 4.75em, 3.075em 4.875em, 3.2em 5em, 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.slider:focus::-ms-thumb {
+  background: linear-gradient(#f1f1f1, #b5b5b5) 50% calc(100% - .5em) border-box, linear-gradient(#fa3030, #f30100) 50% calc(100% - .125em) border-box, linear-gradient(135deg, #e70809, #fa3030, #f30100, #fc8986) 50% calc(100% - 1px) border-box, linear-gradient(135deg, #e70809, #fa3030, #f30100, #fe6566) 50% 100% border-box, linear-gradient(90deg, #f86a69, #ab0101 25%, #ab0101 65%, #f05551 75%, #dc2828 92%, #fb9997 98%) content-box, linear-gradient(90deg, #ea5a5a, #ab0101, #ab0101, #e9292f) padding-box, linear-gradient(90deg, #e13d3c, #ab0101, #ab0101, #e82a2a) border-box;
+  background-repeat: no-repeat;
+  background-size: 0.375em 4em, 2.95em 4.75em, 3.075em 4.875em, 3.2em 5em, 100% 100%, 100% 100%, 100% calc(100% - .375em);
+}
+.slider:focus::-webkit-slider-thumb:before, .slider:focus /deep/ #thumb:before {
+  background: linear-gradient(#fa3030, #f30100) 50% calc(100% - .125em) border-box, linear-gradient(135deg, #e70809, #fa3030, #f30100, #fc8986) 50% calc(100% - 1px) border-box, linear-gradient(135deg, #e70809, #fa3030, #f30100, #fe6566) 50% 100% border-box;
+  background-clip: content-box, padding-box, border-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}

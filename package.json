@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "Remote Web Midi Controller for Yamaha 01V",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/cdgco/01V-Web-Controller.git"
+        "type": "git",
+        "url": "https://github.com/cdgco/01V-Web-Controller.git"
     },
     "main": "main.js",
     "scripts": {

@@ -12,14 +12,14 @@
 3. Set MIDI port to MIDI
 4. Intitalize your Yamaha 01V MIDI Control Change Table in 03D mode.
 5. Add the following MIDI Control Change paramaters:
-  * CC 13 -> Fader -> Channel -> 15-16
-  * CC 14 -> On -> Channel -> 15-16
-  * CC 15 -> Pan -> Channel -> 15
-  * CC 16 -> Pan -> Channel -> 16
-  * CC 50 -> On -> Master -> Bus 1
-  * CC 51 -> On -> Master -> Bus 2
-  * CC 52 -> On -> Master -> Bus 3
-  * CC 53 -> On -> Master -> Bus 4
+   * CC 13 -> Fader -> Channel -> 15-16
+   * CC 14 -> On -> Channel -> 15-16
+   * CC 15 -> Pan -> Channel -> 15
+   * CC 16 -> Pan -> Channel -> 16
+   * CC 50 -> On -> Master -> Bus 1
+   * CC 51 -> On -> Master -> Bus 2
+   * CC 52 -> On -> Master -> Bus 3
+   * CC 53 -> On -> Master -> Bus 4
 
 ## Host Software Setup
 You can either install 01V Web Controller directly from NPM, or clone it from GitHub. 

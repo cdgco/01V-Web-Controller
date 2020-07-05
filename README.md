@@ -22,21 +22,12 @@
    * CC 53 -> On -> Master -> Bus 4
 
 ## Host Software Setup
-You can either install 01V Web Controller directly from NPM, or clone it from GitHub. 
-
 01V works on any system that has Node.js. Get it here: https://nodejs.org/.
 
 ### NPM Install
 ```
 npm i @cdgco/01v-web-controller
 cd node_modules/@cdgco/01v-web-controller
-npm start
-```
-
-### GitHub Install
-```
-git clone git://github.com/cdgco/01v-web-controller
-cd 01v-web-controller
 npm start
 ```
 

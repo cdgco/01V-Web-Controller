@@ -1,6 +1,6 @@
 {
     "name": "@cdgco/01v-web-controller",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "Remote Web Midi Controller for Yamaha 01V",
     "repository": {
         "type": "git",
@@ -8,10 +8,7 @@
     },
     "main": "main.js",
     "scripts": {
-        "start": "npm install && electron ."
-    },
-    "publishConfig": {
-        "registry":"https://npm.pkg.github.com/"
+        "start": "electron ."
     },
     "author": "Carter Roeser <carter@cdgtech.one>",
     "license": "MIT",
@@ -20,10 +17,12 @@
         "ip": "^1.1.5",
         "jquery": "^3.5.1",
         "jzz": "^1.0.8",
+        "shelljs": "^0.8.4",
         "socket.io": "^2.3.0",
-        "web-midi-api": "^2.0.8"
-    },
-    "devDependencies": {
+        "web-midi-api": "^2.0.8",
         "electron": "^9.0.5"
+    },
+    "bin": {
+        "01VWebController": "./global.js"
     }
 }

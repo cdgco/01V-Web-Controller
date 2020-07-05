@@ -22,9 +22,8 @@
 01V works on any system that has Node.js. Get it here: https://nodejs.org/.
 
 ```
-npm i @cdgco/01v-web-controller
-cd node_modules/@cdgco/01v-web-controller
-npm start
+npm i @cdgco/01v-web-controller -g
+01vWebController
 ```
 
 ## Usage

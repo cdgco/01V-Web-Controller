@@ -2,9 +2,6 @@
 :-------------------------:|:-------------------------:|
 |||
 
-
-
-
 ## Mixer Setup
 
 1. Enable Midi Control Change Rx & Tx
@@ -21,10 +18,9 @@
    * CC 52 -> On -> Master -> Bus 3
    * CC 53 -> On -> Master -> Bus 4
 
-## Host Software Setup
+## Installation
 01V works on any system that has Node.js. Get it here: https://nodejs.org/.
 
-### NPM Install
 ```
 npm i @cdgco/01v-web-controller
 cd node_modules/@cdgco/01v-web-controller

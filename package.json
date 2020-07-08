@@ -1,7 +1,16 @@
 {
     "name": "@cdgco/01v-web-controller",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Remote Web Midi Controller for Yamaha 01V",
+    "keywords": [
+        "Yamaha",
+        "01V",
+        "Yamaha 01V",
+        "Mixer",
+        "Remote Mixer",
+        "Remote Control",
+        "Midi"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/cdgco/01V-Web-Controller.git"

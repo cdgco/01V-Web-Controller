@@ -50,7 +50,7 @@ $(() => {
     }
 
 
-    document.getElementById('submitButton').addEventListener('click', (evt, input, output, port) => {
+    document.getElementById('ipcForm').addEventListener('submit', (evt, input, output, port) => {
         var input = document.getElementById('setup-inputs').value;
         var output = document.getElementById('setup-outputs').value;
         var port = document.getElementById('port').value;

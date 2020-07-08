@@ -19,7 +19,7 @@
    * CC 53 -> On -> Master -> Bus 4
 
 ## Installation
-01V works on any system that has Node.js. Get it here: https://nodejs.org/.
+01V works on systems that have Node.js. Get it here: https://nodejs.org/.
 
 ```
 npm i @cdgco/01v-web-controller -g
